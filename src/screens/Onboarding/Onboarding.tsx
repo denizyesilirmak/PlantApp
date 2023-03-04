@@ -1,13 +1,17 @@
 import {useRef} from 'react';
 import {Button, Text, useWindowDimensions, View} from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
 import {updateOnboardingStatus} from '../../storage';
 import Carousel from 'react-native-reanimated-carousel';
+import OnboardingSliderItem from '../../components/OnboardingSliderItem/OnboardingSliderItem';
+
+type RenderItemProps = {
+  index: number;
+};
+
+const renderItem = ({index}: RenderItemProps) => <OnboardingSliderItem />;
 
 const Onboarding = () => {
   const {width} = useWindowDimensions();
-  const scrollViewRef = useRef<ScrollView>(null);
-
   return (
     <View
       style={{
@@ -15,19 +19,13 @@ const Onboarding = () => {
         backgroundColor: 'lightpink',
       }}>
       <Carousel
+        loop={false}
+        style={{
+          flex: 1,
+        }}
         width={width}
-        height={width / 2}
-        data={[...new Array(6).keys()]}
-        renderItem={({index}) => (
-          <View
-            style={{
-              flex: 1,
-              borderWidth: 1,
-              justifyContent: 'center',
-            }}>
-            <Text style={{textAlign: 'center', fontSize: 30}}>{index}</Text>
-          </View>
-        )}
+        data={[...new Array(2).keys()]}
+        renderItem={renderItem}
       />
     </View>
   );

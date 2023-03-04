@@ -26,7 +26,13 @@ export const RootNavigator = () => {
             name="GetStarted"
             component={GetStarted}
           /> */}
-          <RootStackNavigator.Screen name="Onboarding" component={Onboarding} />
+          <RootStackNavigator.Screen
+            options={{
+              headerShown: false,
+            }}
+            name="Onboarding"
+            component={Onboarding}
+          />
         </>
       )}
       <RootStackNavigator.Screen
