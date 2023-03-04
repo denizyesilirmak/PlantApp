@@ -19,13 +19,13 @@ export const RootNavigator = () => {
     <RootStackNavigator.Navigator>
       {!skipOnboarding && (
         <>
-          <RootStackNavigator.Screen
+          {/* <RootStackNavigator.Screen
             options={{
               headerShown: false,
             }}
             name="GetStarted"
             component={GetStarted}
-          />
+          /> */}
           <RootStackNavigator.Screen name="Onboarding" component={Onboarding} />
         </>
       )}

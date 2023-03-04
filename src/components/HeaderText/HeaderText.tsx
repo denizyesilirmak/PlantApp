@@ -11,6 +11,7 @@ const HeaderText = ({text, highlightedWord}: HeaderTextProps) => {
       <View
         style={{
           width: '100%',
+          marginTop: 10
         }}>
         <Text
           style={{
@@ -31,6 +32,7 @@ const HeaderText = ({text, highlightedWord}: HeaderTextProps) => {
     <View
       style={{
         width: '100%',
+        marginTop: 10
       }}>
       <Text
         style={{
