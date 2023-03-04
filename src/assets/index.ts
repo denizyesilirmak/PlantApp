@@ -8,9 +8,11 @@ import CameraLine from './images/camera-line.png'
 import DetailedIcon from './icons/detailed.png'
 import RichIcon from './icons/rich.png'
 import FastIcon from './icons/fast.png'
-
-
-
+import DiagnoseIcon from './icons/diagnose.png'
+import MyGardenIcon from './icons/my-garden.png'
+import HomeIcon from './icons/home.png'
+import ScanIcon from './icons/scan.png'
+import ProfileIcon from './icons/profile.png'
 
 export {
   BackgroundImage,
@@ -22,5 +24,10 @@ export {
   CameraLine,
   DetailedIcon,
   RichIcon,
-  FastIcon
+  FastIcon,
+  DiagnoseIcon,
+  MyGardenIcon,
+  HomeIcon,
+  ScanIcon,
+  ProfileIcon
 };

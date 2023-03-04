@@ -1,6 +1,6 @@
 import {Text, View} from 'react-native';
 
-const Home = () => {
+const Diagnose = () => {
   return (
     <View
         style={{
@@ -9,9 +9,9 @@ const Home = () => {
             alignItems: 'center',
         }}
     >
-      <Text>Home</Text>
+      <Text>Diagnose</Text>
     </View>
   );
 };
 
-export default Home;
+export default Diagnose;

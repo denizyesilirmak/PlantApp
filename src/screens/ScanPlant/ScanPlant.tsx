@@ -1,6 +1,6 @@
 import {Text, View} from 'react-native';
 
-const Home = () => {
+const ScanPlant = () => {
   return (
     <View
         style={{
@@ -9,9 +9,9 @@ const Home = () => {
             alignItems: 'center',
         }}
     >
-      <Text>Home</Text>
+      <Text>ScanPlant</Text>
     </View>
   );
 };
 
-export default Home;
+export default ScanPlant;
