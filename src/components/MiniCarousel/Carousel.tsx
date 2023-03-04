@@ -52,12 +52,12 @@ const Carousel = () => {
       horizontal
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={{
-        gap: 10,
+        gap: 12,
         paddingHorizontal: 20,
+        alignItems: 'center'
       }}
       style={{
-        width: '100%',
-        height: 100,
+        flex: 1,
       }}>
       {PAYWALL_SLIDER_ITEMS.map((item, index) => {
         return <CarouselItem key={item.key} data={item} />;

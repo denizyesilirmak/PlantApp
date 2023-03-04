@@ -3,9 +3,9 @@ import {StyleSheet} from 'react-native';
 export const style = StyleSheet.create({
   carouselItemBackground: {
     width: 230,
-    height: 140,
+    height: 120,
     borderRadius: 10,
-    padding: 20,
+    padding: 12,
     justifyContent: 'space-around',
     alignItems: 'flex-start',
   },
@@ -21,15 +21,15 @@ export const style = StyleSheet.create({
     padding: 10,
   },
   boldText: {
-    fontFamily: 'Rubik-Bold',
+    fontFamily: 'Rubik-SemiBold',
     color: '#ffffff',
-    fontSize: 24,
+    fontSize: 20,
     marginTop: 10,
   },
   lightText: {
     fontFamily: 'Rubik-Light',
     color: '#ffffff',
-    fontSize: 18,
+    fontSize: 14,
     marginTop: 4,
   },
 });

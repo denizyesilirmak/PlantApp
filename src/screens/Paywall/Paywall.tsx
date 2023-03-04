@@ -13,6 +13,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {CameraLine, PaywallBackground, PlantImage2} from '../../assets';
 import LargeButton from '../../components/LargeButton/LargeButton';
 import Carousel from '../../components/MiniCarousel/Carousel';
+import OptionList from '../../components/OptionList/OptionList';
 import {updateOnboardingStatus} from '../../storage';
 import {styles} from './Paywall.style';
 
@@ -41,6 +42,7 @@ const Paywall = () => {
         </Text>
         <Text style={styles.promoteText}>Access All Features</Text>
         <Carousel />
+        <OptionList />
         <View
           style={{
             paddingHorizontal: 20,
