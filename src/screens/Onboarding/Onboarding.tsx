@@ -5,7 +5,7 @@ import SliderIndicator from '../../components/SliderIndicator/SliderIndicator';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {FlatList} from 'react-native-gesture-handler';
 import {styles} from './Onboarding.style';
-import {useRef, useState} from 'react';
+import {useCallback, useRef, useState} from 'react';
 import {clamp} from '../../helpers';
 import {useNavigation} from '@react-navigation/native';
 
@@ -50,9 +50,8 @@ const Onboarding = () => {
   const flatListRef = useRef<FlatList>(null);
   const [activeSliderIndex, setActiveSliderIndex] = useState<number>(0);
 
-  console.log(activeSliderIndex);
 
-  const handleContinueButtonPress = () => {
+  const handleContinueButtonPress = useCallback(() => {
     if (activeSliderIndex >= SLIDER_ITEMS.length - 1) {
       console.log('next page');
       navigation.navigate('Paywall');
@@ -63,7 +62,7 @@ const Onboarding = () => {
       index: clamp(activeSliderIndex + 1, 0, SLIDER_ITEMS.length - 1),
       animated: true,
     });
-  };
+  }, [activeSliderIndex]);
 
   return (
     <View

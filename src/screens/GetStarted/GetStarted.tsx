@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import {useEffect} from 'react';
 import {Image, ImageBackground, StatusBar, Text} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {BackgroundImage, PlantImage1} from '../../assets';
@@ -9,10 +9,10 @@ import styles from './GetStarted.style';
 const GetStarted = ({navigation}) => {
   const insets = useSafeAreaInsets();
 
-  useEffect(()=> {
-    StatusBar.setHidden(true, 'slide')
-    StatusBar.setBarStyle('dark-content')
-  }, [])
+  useEffect(() => {
+    StatusBar.setHidden(true, 'slide');
+    StatusBar.setBarStyle('dark-content');
+  }, []);
 
   return (
     <ImageBackground

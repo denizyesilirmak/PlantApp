@@ -1,53 +1,47 @@
-import {Image, ScrollView, Text, View} from 'react-native';
+import {Image, ImageSourcePropType, ScrollView, Text, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {DetailedIcon} from '../../assets';
+import {DetailedIcon, FastIcon, RichIcon} from '../../assets';
+import {style} from './Carousel.style';
 
-const CarouselItem = () => {
+const PAYWALL_SLIDER_ITEMS = [
+  {
+    key: 'a0',
+    title: 'Unlimited',
+    icon: RichIcon,
+    description: 'Plant Identify',
+  },
+  {
+    key: 'a2',
+    title: 'Super Fast',
+    icon: FastIcon,
+    description: 'Process in seconds',
+  },
+  {
+    key: 'a3',
+    title: 'Detailed',
+    icon: DetailedIcon,
+    description: 'Tons of information',
+  },
+];
+
+type CarouselItemProps = {
+  data: {
+    title: string;
+    icon: ImageSourcePropType;
+    description: string;
+  };
+};
+
+const CarouselItem = ({data}: CarouselItemProps) => {
   return (
     <LinearGradient
-      colors={['#ffffff20', '#ffffff10']}
-      style={{
-        width: 230,
-        height: 160,
-        borderRadius: 10,
-        padding: 20,
-        justifyContent: 'flex-start',
-        alignItems: 'flex-start',
-      }}>
-      <View
-        style={{
-          padding: 10,
-          backgroundColor: '#00000060',
-          borderRadius: 10,
-        }}>
-        <Image
-          source={DetailedIcon}
-          style={{
-            width: 25,
-            height: 25,
-            tintColor: '#ffffff',
-            padding: 10,
-          }}
-        />
+      colors={['#ffffff40', '#ffffff10']}
+      style={style.carouselItemBackground}>
+      <View style={style.iconWrapper}>
+        <Image source={data.icon} style={style.icon} />
       </View>
-      <Text
-        style={{
-          fontFamily: 'Rubik-Bold',
-          color: '#ffffff',
-          fontSize: 24,
-          marginTop: 20,
-        }}>
-        Unlimited
-      </Text>
-      <Text
-        style={{
-          fontFamily: 'Rubik-Light',
-          color: '#ffffff',
-          fontSize: 18,
-          marginTop: 4,
-        }}>
-        Plant Identify
-      </Text>
+      <Text style={style.boldText}>{data.title}</Text>
+      <Text style={style.lightText}>{data.description}</Text>
     </LinearGradient>
   );
 };
@@ -65,7 +59,9 @@ const Carousel = () => {
         width: '100%',
         height: 100,
       }}>
-      <CarouselItem />
+      {PAYWALL_SLIDER_ITEMS.map((item, index) => {
+        return <CarouselItem key={item.key} data={item} />;
+      })}
     </ScrollView>
   );
 };
