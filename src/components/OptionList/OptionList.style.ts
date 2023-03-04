@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#ffffff20',
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 12,
+    paddingHorizontal: 12
   },
   container: {
     flex: 1,
@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 10,
     justifyContent: 'space-evenly',
     gap: 12,
+    paddingBottom: 16
   },
   optionLabel: {
     color: '#ffffff',

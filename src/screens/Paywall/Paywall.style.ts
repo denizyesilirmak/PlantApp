@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
   },
   topSection: {
     width: '100%',
-    height: '40%',
+    height: '30%',
     opacity: 0.9,
     justifyContent: 'center',
     alignItems: 'center',
@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
   },
   bottomSection: {
     width: '100%',
-    height: '52%',
+    height: '54%',
     position: 'absolute',
     paddingHorizontal: 0,
   },

@@ -54,6 +54,18 @@ const Paywall = () => {
               navigation.navigate('HomeStack');
             }}
           />
+          <Text
+            style={{
+              color: '#ffffffbb',
+              fontSize: 10,
+              textAlign: 'center',
+              fontFamily: 'Rubik-Light',
+              marginTop: 4
+            }}>
+            After the 3-day free trial period you’ll be charged ₺274.99 per year
+            unless you cancel before the trial expires. Yearly Subscription is
+            Auto-Renewable
+          </Text>
         </View>
       </View>
     </ImageBackground>
