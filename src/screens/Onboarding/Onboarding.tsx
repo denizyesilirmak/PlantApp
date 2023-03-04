@@ -7,7 +7,7 @@ import {FlatList} from 'react-native-gesture-handler';
 import {styles} from './Onboarding.style';
 import {useRef, useState} from 'react';
 import {clamp} from '../../helpers';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 const SLIDER_ITEMS = [
   {
@@ -46,14 +46,16 @@ const renderItem = ({index, item}: RenderItemProps) => (
 const Onboarding = () => {
   const {width} = useWindowDimensions();
   const insets = useSafeAreaInsets();
-  const navigation = useNavigation()
+  const navigation = useNavigation();
   const flatListRef = useRef<FlatList>(null);
   const [activeSliderIndex, setActiveSliderIndex] = useState<number>(0);
+
+  console.log(activeSliderIndex);
 
   const handleContinueButtonPress = () => {
     if (activeSliderIndex >= SLIDER_ITEMS.length - 1) {
       console.log('next page');
-      navigation.navigate('Paywall')
+      navigation.navigate('Paywall');
       return;
     }
 
@@ -72,11 +74,12 @@ const Onboarding = () => {
       }}>
       <View style={styles.listContainer}>
         <FlatList
+          scrollEnabled={false}
           ref={flatListRef}
           style={styles.flatlist}
           onMomentumScrollEnd={event =>
             setActiveSliderIndex(
-              Number(event.nativeEvent.contentOffset.x / width),
+              parseInt(Math.round(event.nativeEvent.contentOffset.x / width)),
             )
           }
           showsHorizontalScrollIndicator={false}

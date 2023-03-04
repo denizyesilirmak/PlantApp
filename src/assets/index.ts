@@ -5,6 +5,12 @@ import OnboardingImage from './images/onboarding1.png';
 import PaywallBackground from './images/paywall-background.jpg';
 import PlantImage2 from './images/plant.png';
 import CameraLine from './images/camera-line.png'
+import DetailedIcon from './icons/detailed.png'
+import RichIcon from './icons/rich.png'
+import FastIcon from './icons/fast.png'
+
+
+
 
 export {
   BackgroundImage,
@@ -13,5 +19,8 @@ export {
   OnboardingImage,
   PaywallBackground,
   PlantImage2,
-  CameraLine
+  CameraLine,
+  DetailedIcon,
+  RichIcon,
+  FastIcon
 };
