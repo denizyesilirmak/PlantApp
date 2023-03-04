@@ -1,6 +1,8 @@
-import {ImageBackground, Text, View} from 'react-native';
+import {Image, ImageBackground, Text} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {BackgroundImage} from '../../assets';
+import {BackgroundImage, PlantImage1} from '../../assets';
+import HeaderText from '../../components/HeaderText';
+import styles from './GetStarted.style';
 
 const GetStarted = () => {
   const insets = useSafeAreaInsets();
@@ -8,38 +10,16 @@ const GetStarted = () => {
   return (
     <ImageBackground
       source={BackgroundImage}
-      style={{
-        flex: 1,
-        paddingTop: insets.top + 20,
-        padding: 20,
-      }}>
+      style={{...styles.background, paddingTop: insets.top + 20}}>
+      <HeaderText text="Welcome to PlantApp" highlightedWord="PlantApp" />
       <Text
-        style={{
-          fontSize: 28,
-          marginBottom: 6
-        }}>
-        <Text
-          style={{
-            fontFamily: 'Rubik-Regular',
-          }}>
-          Welcome to{' '}
-        </Text>
-        <Text
-          style={{
-            fontFamily: 'Rubik-SemiBold',
-          }}>
-          PlantApp
-        </Text>
-      </Text>
-      <Text
-        style={{
-          fontSize: 16,
-          maxWidth: '82%',
-          fontFamily: 'Rubik-Light',
-          lineHeight: 22
-        }}>
+        style={styles.description}>
         Identify more than 3000+ plants and 88% accuracy.
       </Text>
+      <Image
+        source={PlantImage1}
+        style={styles.image}
+      />
     </ImageBackground>
   );
 };
