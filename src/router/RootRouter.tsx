@@ -2,6 +2,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import GetStarted from '../screens/GetStarted/GetStarted';
 import Home from '../screens/Home/Home';
 import Onboarding from '../screens/Onboarding/Onboarding';
+import Paywall from '../screens/Paywall/Paywall';
 import {getOnboardingCompleted} from '../storage';
 import {HomeNavigator} from './HomeRouter';
 
@@ -9,6 +10,8 @@ type RootStackParamList = {
   HomeStack: undefined;
   Onboarding: undefined;
   GetStarted: undefined;
+  Paywall: undefined;
+
 };
 
 const RootStackNavigator = createStackNavigator<RootStackParamList>();
@@ -32,6 +35,13 @@ export const RootNavigator = () => {
             }}
             name="Onboarding"
             component={Onboarding}
+          />
+          <RootStackNavigator.Screen
+            options={{
+              headerShown: false,
+            }}
+            name="Paywall"
+            component={Paywall}
           />
         </>
       )}

@@ -7,6 +7,7 @@ import {FlatList} from 'react-native-gesture-handler';
 import {styles} from './Onboarding.style';
 import {useRef, useState} from 'react';
 import {clamp} from '../../helpers';
+import { useNavigation } from '@react-navigation/native';
 
 const SLIDER_ITEMS = [
   {
@@ -45,12 +46,14 @@ const renderItem = ({index, item}: RenderItemProps) => (
 const Onboarding = () => {
   const {width} = useWindowDimensions();
   const insets = useSafeAreaInsets();
+  const navigation = useNavigation()
   const flatListRef = useRef<FlatList>(null);
   const [activeSliderIndex, setActiveSliderIndex] = useState<number>(0);
 
   const handleContinueButtonPress = () => {
     if (activeSliderIndex >= SLIDER_ITEMS.length - 1) {
       console.log('next page');
+      navigation.navigate('Paywall')
       return;
     }
 
