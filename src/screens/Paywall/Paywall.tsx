@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import Animated, { FadeInUp, SlideInUp } from 'react-native-reanimated';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {CameraLine, PaywallBackground, PlantImage2} from '../../assets';
 import LargeButton from '../../components/LargeButton/LargeButton';
@@ -31,7 +32,7 @@ const Paywall = () => {
         colors={['#00000000', '#101E17da', '#101E17ff']}
         style={{...styles.gradientOverlay, paddingTop: insets.top + 20}}>
         <View style={styles.topSection}>
-          <Image style={styles.cameraLine} source={CameraLine} />
+          <Animated.Image entering={FadeInUp.duration(1000).delay(600).springify()}  style={styles.cameraLine} source={CameraLine} />
           <Image source={PlantImage2} />
         </View>
       </LinearGradient>

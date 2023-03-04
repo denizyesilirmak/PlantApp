@@ -7,7 +7,7 @@ import {
   ParamListBase,
   TabNavigationState,
 } from '@react-navigation/native';
-import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
+import {Image, Platform, Pressable, StyleSheet, Text, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {
   DiagnoseIcon,
@@ -50,12 +50,12 @@ const TabBar = ({state, descriptors, navigation}: TabBarProps) => {
     <View
       style={{
         backgroundColor: '#ffffffda',
-        height: 84,
         paddingBottom: insets.bottom,
         borderTopWidth: StyleSheet.hairlineWidth,
         borderTopColor: '#00000050',
         flexDirection: 'row',
         justifyContent: 'space-between',
+        maxHeight: Platform.OS === 'android' ? 60 : 84,
       }}>
       {state.routes.map((route, index) => {
         const {options} = descriptors[route.key];
@@ -95,6 +95,14 @@ const TabBar = ({state, descriptors, navigation}: TabBarProps) => {
                 borderColor: '#2CCC80',
                 borderWidth: 6,
                 marginHorizontal: 6,
+                shadowColor: '#28AF6Eff',
+                shadowOffset: {
+                  width: 0,
+                  height: 2,
+                },
+                shadowOpacity: state.index === index ? 0.8 : 0,
+                shadowRadius: 10,
+                elevation: state.index === index ? 5 : 0,
               }}
               key={route.key}>
               <TabBarIcon

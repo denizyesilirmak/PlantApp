@@ -1,5 +1,6 @@
 import {useEffect} from 'react';
 import {Image, ImageBackground, StatusBar, Text} from 'react-native';
+import Animated, { FadeInDown, FadeOutDown } from 'react-native-reanimated';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {BackgroundImage, PlantImage1} from '../../assets';
 import HeaderText from '../../components/HeaderText/HeaderText';
@@ -10,7 +11,6 @@ const GetStarted = ({navigation}) => {
   const insets = useSafeAreaInsets();
 
   useEffect(() => {
-    StatusBar.setHidden(true, 'slide');
     StatusBar.setBarStyle('dark-content');
   }, []);
 
@@ -19,10 +19,10 @@ const GetStarted = ({navigation}) => {
       source={BackgroundImage}
       style={{...styles.background, paddingVertical: insets.top}}>
       <HeaderText text="Welcome to PlantApp" highlightedWord="PlantApp" />
-      <Text style={styles.description}>
+      <Animated.Text exiting={FadeOutDown.duration(1000)} entering={FadeInDown.duration(500).delay(100)} style={styles.description}>
         Identify more than 3000+ plants and 88% accuracy.
-      </Text>
-      <Image source={PlantImage1} style={styles.image} />
+      </Animated.Text>
+      <Animated.Image entering={FadeInDown.duration(800).delay(100)} source={PlantImage1} style={styles.image} />
       <LargeButton
         label="Get Started"
         onPress={() => navigation.replace('Onboarding')}

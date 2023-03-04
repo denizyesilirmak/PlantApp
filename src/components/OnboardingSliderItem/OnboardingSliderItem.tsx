@@ -5,6 +5,7 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
+import Animated, {FadeInDown} from 'react-native-reanimated';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {OnboardingBackground1, OnboardingImage} from '../../assets';
 import HeaderText from '../HeaderText/HeaderText';

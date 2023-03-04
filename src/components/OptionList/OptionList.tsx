@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
+import Animated, { FadeInLeft, FadeInRight } from 'react-native-reanimated';
 import OptionCheck from './OptionCheck';
 import {styles} from './OptionList.style';
 
@@ -32,10 +33,10 @@ const OptionList = () => {
                 selectedOptionIndex === index ? '#28AF6Eff' : '#ffffff60',
             }}>
             <OptionCheck checked={selectedOptionIndex === index} />
-            <View>
+            <Animated.View  entering={FadeInRight.duration(300).delay(100 + index*100)}>
               <Text style={styles.optionLabel}>1 Month</Text>
               <Text style={styles.optionDesc}>2.99$ /month, autorenewable</Text>
-            </View>
+            </Animated.View>
           </Pressable>
         );
       })}

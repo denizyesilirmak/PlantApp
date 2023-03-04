@@ -13,6 +13,7 @@ import MyGardenIcon from './icons/my-garden.png'
 import HomeIcon from './icons/home.png'
 import ScanIcon from './icons/scan.png'
 import ProfileIcon from './icons/profile.png'
+import PlantBackground from './images/plant-background.png'
 
 export {
   BackgroundImage,
@@ -29,5 +30,6 @@ export {
   MyGardenIcon,
   HomeIcon,
   ScanIcon,
-  ProfileIcon
+  ProfileIcon,
+  PlantBackground
 };

@@ -73,7 +73,7 @@ const Onboarding = () => {
       }}>
       <View style={styles.listContainer}>
         <FlatList
-          scrollEnabled={false}
+          scrollEnabled={true}
           ref={flatListRef}
           style={styles.flatlist}
           onMomentumScrollEnd={event =>

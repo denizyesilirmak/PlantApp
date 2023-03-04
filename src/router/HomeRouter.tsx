@@ -21,6 +21,7 @@ export const HomeNavigator = () => {
       <HomeTabNavigator.Screen
         options={{
           title: 'Home',
+          headerShown: false
         }}
         name="Home"
         component={Home}
