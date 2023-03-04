@@ -1,35 +1,41 @@
-import {Image, ImageBackground, Text, View} from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import {
+  Image,
+  ImageBackground,
+  Text,
+  useWindowDimensions,
+  View,
+} from 'react-native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {OnboardingBackground1, OnboardingImage} from '../../assets';
 import HeaderText from '../HeaderText/HeaderText';
-import LargeButton from '../LargeButton/LargeButton';
 
-const OnboardingSliderItem = () => {
-    const insets = useSafeAreaInsets()
+const OnboardingSliderItem = ({item}: any) => {
+  const {width} = useWindowDimensions();
 
   return (
-    <ImageBackground
-      source={OnboardingBackground1}
+    <View
       style={{
         flex: 1,
+        width: width,
         padding: 20,
-        paddingTop: insets.top
       }}>
-      <HeaderText
-        text="Take a photo to identify the plant!"
-        highlightedWord="identify"
-      />
-      <Image 
+      <HeaderText text={item.title} highlightedWord={item.highlight} />
+      <Image
+        resizeMode="contain"
         source={OnboardingImage}
         style={{
-            width: '100%',
-            flex: 1,
+          width: '100%',
+          flex: 1,
         }}
       />
-      <LargeButton 
-        label='Continue'
-      />
-    </ImageBackground>
+      <Text
+        style={{
+          paddingVertical: 10,
+          fontFamily: 'Rubik-Light',
+        }}>
+        {item.description}
+      </Text>
+    </View>
   );
 };
 
