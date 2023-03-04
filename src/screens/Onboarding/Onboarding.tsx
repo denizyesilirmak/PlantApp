@@ -12,30 +12,23 @@ const Onboarding = () => {
     <View
       style={{
         flex: 1,
-        backgroundColor: 'lightpink'
+        backgroundColor: 'lightpink',
       }}>
-            <Carousel
-                loop
-                width={width}
-                height={width / 2}
-                autoPlay={true}
-                data={[...new Array(6).keys()]}
-                scrollAnimationDuration={1000}
-                onSnapToItem={(index) => console.log('current index:', index)}
-                renderItem={({ index }) => (
-                    <View
-                        style={{
-                            flex: 1,
-                            borderWidth: 1,
-                            justifyContent: 'center',
-                        }}
-                    >
-                        <Text style={{ textAlign: 'center', fontSize: 30 }}>
-                            {index}
-                        </Text>
-                    </View>
-                )}
-            />
+      <Carousel
+        width={width}
+        height={width / 2}
+        data={[...new Array(6).keys()]}
+        renderItem={({index}) => (
+          <View
+            style={{
+              flex: 1,
+              borderWidth: 1,
+              justifyContent: 'center',
+            }}>
+            <Text style={{textAlign: 'center', fontSize: 30}}>{index}</Text>
+          </View>
+        )}
+      />
     </View>
   );
 };
