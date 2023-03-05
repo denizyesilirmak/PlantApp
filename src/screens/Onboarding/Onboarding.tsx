@@ -5,9 +5,10 @@ import SliderIndicator from '../../components/SliderIndicator/SliderIndicator';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {FlatList} from 'react-native-gesture-handler';
 import {styles} from './Onboarding.style';
-import {useCallback, useRef, useState} from 'react';
+import {useCallback, useEffect, useRef, useState} from 'react';
 import {clamp} from '../../helpers';
 import {useNavigation} from '@react-navigation/native';
+import {useSelector} from 'react-redux';
 
 const SLIDER_ITEMS = [
   {
@@ -49,7 +50,6 @@ const Onboarding = () => {
   const navigation = useNavigation();
   const flatListRef = useRef<FlatList>(null);
   const [activeSliderIndex, setActiveSliderIndex] = useState<number>(0);
-
 
   const handleContinueButtonPress = useCallback(() => {
     if (activeSliderIndex >= SLIDER_ITEMS.length - 1) {

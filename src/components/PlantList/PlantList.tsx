@@ -4,11 +4,11 @@ import Animated, {FadeIn} from 'react-native-reanimated';
 import {MOCKPLANTLIST} from '../../mock/mock';
 import { styles } from './PlantList.style';
 
-const PlantList = () => {
+const PlantList = ({items}: {items: []}) => {
   return (
     <View
       style={styles.container}>
-      {MOCKPLANTLIST.data.map((category, index) => {
+      {items.map((category, index) => {
         return (
           <Animated.View
             entering={FadeIn.duration(200).delay(100 + index * 40)}

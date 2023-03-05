@@ -21,14 +21,24 @@ import SearchBox from '../../components/SearchBox/SearchBox';
 import {styles} from './Home.style';
 import Carousel from '../../components/Carousel/Carousel';
 import PlantList from '../../components/PlantList/PlantList';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchPlantCategories, fetchPosts, requestQuestions } from '../../store/actions';
 
 const Home = () => {
   const {width} = useWindowDimensions();
   const insets = useSafeAreaInsets();
   const translateY = useSharedValue(0);
+  const dispatch = useDispatch()
+  const questions = useSelector(state => state.questions)
+  const categories = useSelector(state => state.plantCategories)
+
 
   useEffect(() => {
     StatusBar.setBarStyle('dark-content');
+    dispatch(fetchPosts())
+    dispatch(fetchPlantCategories())
+
+    
   }, []);
 
   const scrollHandler = useAnimatedScrollHandler(event => {
@@ -104,8 +114,8 @@ const Home = () => {
           }}>
           Get Started
         </Text>
-        <Carousel />
-        <PlantList />
+        <Carousel items={questions} />
+        <PlantList items={categories}/>
       </Animated.ScrollView>
     </View>
   );

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import {
   Image,
   ImageBackground,
@@ -12,6 +13,7 @@ import HeaderText from '../HeaderText/HeaderText';
 
 const OnboardingSliderItem = ({item}: any) => {
   const {width} = useWindowDimensions();
+
 
   return (
     <View

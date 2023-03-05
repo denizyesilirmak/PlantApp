@@ -34,8 +34,8 @@ const OptionList = () => {
             }}>
             <OptionCheck checked={selectedOptionIndex === index} />
             <Animated.View  entering={FadeInRight.duration(300).delay(100 + index*100)}>
-              <Text style={styles.optionLabel}>1 Month</Text>
-              <Text style={styles.optionDesc}>2.99$ /month, autorenewable</Text>
+              <Text style={styles.optionLabel}>{option.label}</Text>
+              <Text style={styles.optionDesc}>{option.desc}</Text>
             </Animated.View>
           </Pressable>
         );

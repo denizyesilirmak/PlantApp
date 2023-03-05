@@ -1,6 +1,7 @@
-import {createStore} from 'redux';
+import {applyMiddleware, createStore} from 'redux';
+import thunk from 'redux-thunk'
 import reducer from './reducers/index';
 
-export const store = createStore(reducer);
+export const store = createStore(reducer, applyMiddleware(thunk));
 
 const action = (type: any) => store.dispatch({type});

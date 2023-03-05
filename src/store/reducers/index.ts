@@ -1,27 +1,28 @@
-const initialState = {
-  questions: [],
-  categories: [],
-  loading: false
-};
+import {
+  REQUEST_QUESTIONS,
+  RECEIVE_QUESTIONS,
+  REQUEST_PLANTCATEGORIES,
+  RECEIVE_PLANTCATEGORIES,
+} from '../actions/index';
 
-export enum ACTION_LIST {
-  GET_CATEGORIES = 'GET_CATEGORIES',
-  GET_QUESTIONS = 'GET_QUESTIONS',
-}
+const initialState = {questions: [], plantCategories: [], loading: false};
 
-interface PostReducerAction {
-  type: ACTION_LIST;
-}
-
-const reducer = (state = initialState, action: PostReducerAction) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ACTION_LIST.GET_CATEGORIES:
+    case REQUEST_QUESTIONS:
       return {...state, loading: true};
-    case ACTION_LIST.GET_QUESTIONS:
+    case RECEIVE_QUESTIONS:
+      return {...state, questions: action.questions, loading: false};
+    case REQUEST_PLANTCATEGORIES:
       return {...state, loading: true};
+    case RECEIVE_PLANTCATEGORIES:
+      return {
+        ...state,
+        plantCategories: action.plantCategories,
+        loading: false,
+      };
     default:
       return state;
   }
 };
-
 export default reducer;

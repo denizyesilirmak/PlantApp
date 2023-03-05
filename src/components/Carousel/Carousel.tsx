@@ -1,10 +1,4 @@
-import {
-  FlatList,
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {FlatList, Pressable, StyleSheet, Text, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import Animated, {FadeIn, FadeInUp} from 'react-native-reanimated';
 import {IQuestion} from '../../../types';
@@ -79,7 +73,7 @@ const renderItem = ({item, index}) => (
   <CarouselItem data={item} index={index} />
 );
 
-const Carousel = () => {
+const Carousel = ({items}: {items: []}) => {
   return (
     <View
       style={{
@@ -93,7 +87,7 @@ const Carousel = () => {
         contentContainerStyle={{
           gap: 10,
         }}
-        data={CAROUSEL_ITEMS}
+        data={items}
         renderItem={renderItem}
         keyExtractor={item => item.id}
       />

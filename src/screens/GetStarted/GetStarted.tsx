@@ -2,16 +2,20 @@ import {useEffect} from 'react';
 import {Image, ImageBackground, StatusBar, Text} from 'react-native';
 import Animated, { FadeInDown, FadeOutDown } from 'react-native-reanimated';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import { useDispatch } from 'react-redux';
 import {BackgroundImage, PlantImage1} from '../../assets';
 import HeaderText from '../../components/HeaderText/HeaderText';
 import LargeButton from '../../components/LargeButton/LargeButton';
+import { fetchPosts, requestQuestions } from '../../store/actions';
 import styles from './GetStarted.style';
 
 const GetStarted = ({navigation}) => {
   const insets = useSafeAreaInsets();
+  const dispatch = useDispatch()
 
   useEffect(() => {
     StatusBar.setBarStyle('dark-content');
+    dispatch(fetchPosts())
   }, []);
 
   return (
