@@ -14,6 +14,11 @@ import HomeIcon from './icons/home.png'
 import ScanIcon from './icons/scan.png'
 import ProfileIcon from './icons/profile.png'
 import PlantBackground from './images/plant-background.png'
+import SearchIcon from './icons/search.png'
+import DeleteIcon from './icons/delete.png'
+import MessageIcon from './icons/message.png'
+import RightArrow from './icons/right-arrow.png'
+import PlantAnimation from './animations/plant.json'
 
 export {
   BackgroundImage,
@@ -31,5 +36,10 @@ export {
   HomeIcon,
   ScanIcon,
   ProfileIcon,
-  PlantBackground
+  PlantBackground,
+  SearchIcon,
+  DeleteIcon,
+  MessageIcon,
+  RightArrow,
+  PlantAnimation
 };

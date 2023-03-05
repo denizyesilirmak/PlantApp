@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   homeContainer: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#f6f6f6',
   },
   header: {
     backgroundColor: '#ffffff',
@@ -28,5 +28,9 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     zIndex: -1,
+  },
+  scrollViewContent: {
+    paddingHorizontal: 20,
+    paddingTop: 10,
   },
 });

@@ -1,15 +1,25 @@
+import AnimatedLottieView from 'lottie-react-native';
 import {Text, View} from 'react-native';
+import {PlantAnimation} from '../../assets';
 
 const Profile = () => {
   return (
     <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
+      <AnimatedLottieView
         style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
+          width: 200,
+          height: 200,
         }}
-    >
-      <Text>Profile</Text>
+        resizeMode="contain"
+        source={PlantAnimation}
+        autoPlay
+      />
+      <Text>On development</Text>
     </View>
   );
 };

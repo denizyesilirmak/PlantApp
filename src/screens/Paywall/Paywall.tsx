@@ -13,7 +13,7 @@ import Animated, { FadeInUp, SlideInUp } from 'react-native-reanimated';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {CameraLine, PaywallBackground, PlantImage2} from '../../assets';
 import LargeButton from '../../components/LargeButton/LargeButton';
-import Carousel from '../../components/MiniCarousel/Carousel';
+import Carousel from '../../components/MiniCarousel/MiniCarousel';
 import OptionList from '../../components/OptionList/OptionList';
 import {updateOnboardingStatus} from '../../storage';
 import {styles} from './Paywall.style';

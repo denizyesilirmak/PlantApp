@@ -1,7 +1,7 @@
 import {Image, ImageSourcePropType, ScrollView, Text, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {DetailedIcon, FastIcon, RichIcon} from '../../assets';
-import {style} from './Carousel.style';
+import {style} from './MiniCarousel.style';
 
 const PAYWALL_SLIDER_ITEMS = [
   {
