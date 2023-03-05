@@ -19,6 +19,8 @@ import DeleteIcon from './icons/delete.png'
 import MessageIcon from './icons/message.png'
 import RightArrow from './icons/right-arrow.png'
 import PlantAnimation from './animations/plant.json'
+import UnderStrokeImage from './images/understroke.png'
+
 
 export {
   BackgroundImage,
@@ -41,5 +43,6 @@ export {
   DeleteIcon,
   MessageIcon,
   RightArrow,
-  PlantAnimation
+  PlantAnimation,
+  UnderStrokeImage
 };

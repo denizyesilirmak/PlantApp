@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
   },
   topSection: {
     width: '100%',
-    height: '30%',
+    height: '36%',
     opacity: 0.9,
     justifyContent: 'center',
     alignItems: 'center',
@@ -22,9 +22,8 @@ export const styles = StyleSheet.create({
   },
   bottomSection: {
     width: '100%',
-    height: '54%',
-    position: 'absolute',
     paddingHorizontal: 0,
+    flex: 1
   },
   promoteText: {
     fontFamily: 'Rubik-Light',
@@ -37,7 +36,8 @@ export const styles = StyleSheet.create({
   textHeader: {
     color: '#ffffff',
     fontSize: 32,
-    marginLeft: 20
+    marginLeft: 20,
+    marginTop: 26
   },
   textHeaderBold: {
     fontFamily: 'Rubik-Bold',

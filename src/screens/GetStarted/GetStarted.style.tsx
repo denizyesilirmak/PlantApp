@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
     maxWidth: '82%',
     fontFamily: 'Rubik-Light',
     lineHeight: 22,
-    marginBottom: 10
+    marginBottom: 10,
+    color: '#000000'
   },
   image: {
     width: '100%',
@@ -23,6 +24,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     color: '#597165',
     paddingHorizontal: 40,
+    marginBottom: 20
   },
 });
 

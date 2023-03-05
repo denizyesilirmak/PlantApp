@@ -1,7 +1,7 @@
-import {applyMiddleware, createStore} from 'redux';
-import thunk from 'redux-thunk'
-import reducer from './reducers/index';
+import {AnyAction, applyMiddleware, createStore} from 'redux';
+import thunk, { ThunkDispatch } from 'redux-thunk'
+import reducer, { StateType } from './reducers/index';
 
 export const store = createStore(reducer, applyMiddleware(thunk));
 
-const action = (type: any) => store.dispatch({type});
+export type AppDispatch = ThunkDispatch<StateType, any, AnyAction>

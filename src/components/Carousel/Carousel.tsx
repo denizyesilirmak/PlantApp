@@ -1,6 +1,6 @@
 import {FlatList, Pressable, StyleSheet, Text, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
-import Animated, {FadeIn, FadeInUp} from 'react-native-reanimated';
+import Animated, {FadeIn} from 'react-native-reanimated';
 import {IQuestion} from '../../../types';
 
 const CAROUSEL_ITEMS = [
@@ -54,7 +54,7 @@ const CarouselItem = ({data, index}: {data: IQuestion; index: number}) => {
           style={{
             color: '#ffffff',
             height: 50,
-            fontFamily: 'Rubik-Semibold',
+            fontFamily: 'Rubik-SemiBold',
             fontSize: 16,
             zIndex: 2,
           }}>

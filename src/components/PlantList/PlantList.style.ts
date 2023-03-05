@@ -24,9 +24,10 @@ export const styles = StyleSheet.create({
     padding: 14,
   },
   title: {
-    fontFamily: 'Rubik-Semibold',
+    fontFamily: 'Rubik-SemiBold',
     textTransform: 'capitalize',
     fontSize: 16,
+    color: '#000000'
   },
   itemImage: {
     right: -40,

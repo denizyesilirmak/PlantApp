@@ -35,7 +35,7 @@ type CarouselItemProps = {
 const CarouselItem = ({data}: CarouselItemProps) => {
   return (
     <LinearGradient
-      colors={['#ffffff40', '#ffffff10']}
+      colors={['#ffffff20', '#ffffff10']}
       style={style.carouselItemBackground}>
       <View style={style.iconWrapper}>
         <Image source={data.icon} style={style.icon} />

@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import {Dispatch, useEffect} from 'react';
 import {
   StatusBar,
   StyleSheet,
@@ -21,24 +21,29 @@ import SearchBox from '../../components/SearchBox/SearchBox';
 import {styles} from './Home.style';
 import Carousel from '../../components/Carousel/Carousel';
 import PlantList from '../../components/PlantList/PlantList';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchPlantCategories, fetchPosts, requestQuestions } from '../../store/actions';
+import {useDispatch, useSelector} from 'react-redux';
+import { StateType } from '../../store/reducers';
+
+import {
+  fetchPlantCategories,
+  fetchPosts,
+  requestQuestions,
+} from '../../store/actions';
+import { getCategories, getQuestions } from '../../store/selectors';
+import { AppDispatch } from '../../store';
 
 const Home = () => {
   const {width} = useWindowDimensions();
   const insets = useSafeAreaInsets();
   const translateY = useSharedValue(0);
-  const dispatch = useDispatch()
-  const questions = useSelector(state => state.questions)
-  const categories = useSelector(state => state.plantCategories)
-
+  const dispatch = useDispatch<AppDispatch>();
+  const questions = useSelector(getQuestions);
+  const categories = useSelector(getCategories);
 
   useEffect(() => {
     StatusBar.setBarStyle('dark-content');
-    dispatch(fetchPosts())
-    dispatch(fetchPlantCategories())
-
-    
+    dispatch(fetchPosts());
+    dispatch(fetchPlantCategories());
   }, []);
 
   const scrollHandler = useAnimatedScrollHandler(event => {
@@ -105,7 +110,7 @@ const Home = () => {
             paddingTop: 200,
           },
         ]}>
-        <PremiumButton translateY={translateY}/>
+        <PremiumButton translateY={translateY} />
         <Text
           style={{
             fontFamily: 'Rubik-SemiBold',
@@ -115,7 +120,7 @@ const Home = () => {
           Get Started
         </Text>
         <Carousel items={questions} />
-        <PlantList items={categories}/>
+        <PlantList items={categories} />
       </Animated.ScrollView>
     </View>
   );

@@ -1,3 +1,7 @@
+import {Dispatch} from 'redux';
+import {ICategory, IQuestion} from '../../../types';
+import {CategoryService, QuestionsService} from '../../api';
+
 export const REQUEST_QUESTIONS = 'REQUEST_QUESTIONS';
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
 
@@ -8,7 +12,7 @@ export const requestQuestions = () => ({
   type: REQUEST_QUESTIONS,
 });
 
-export const recievedQuestion = questions => ({
+export const recievedQuestion = (questions: IQuestion[]) => ({
   type: RECEIVE_QUESTIONS,
   questions: questions,
 });
@@ -16,35 +20,25 @@ export const recievedQuestion = questions => ({
 export const requestPlantCategories = () => ({
   type: REQUEST_PLANTCATEGORIES,
 });
-export const recievedPlantCategories = categories => ({
+export const recievedPlantCategories = (categories: ICategory[]) => ({
   type: RECEIVE_PLANTCATEGORIES,
   plantCategories: categories,
 });
 
 export const fetchPosts = () => {
-  return function (dispatch) {
+  return function (dispatch: Dispatch) {
     dispatch(requestQuestions());
-    return fetch('https://dummy-api-jtg6bessta-ey.a.run.app/getQuestions')
-      .then(
-        response => response.json(),
-        error => console.log('An error occurred.', error),
-      )
-      .then(json => {
-        dispatch(recievedQuestion(json));
-      });
+    QuestionsService().then(questions => {
+      dispatch(recievedQuestion(questions));
+    });
   };
 };
 
 export const fetchPlantCategories = () => {
-  return function (dispatch) {
+  return function (dispatch: Dispatch) {
     dispatch(requestPlantCategories());
-    return fetch('https://dummy-api-jtg6bessta-ey.a.run.app/getCategories')
-      .then(
-        response => response.json(),
-        error => console.log('An error occurred.', error),
-      )
-      .then(json => {
-        dispatch(recievedPlantCategories(json.data));
-      });
+    CategoryService().then(categories => {
+      dispatch(recievedPlantCategories(categories));
+    });
   };
 };

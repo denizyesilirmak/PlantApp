@@ -19,7 +19,7 @@ const Diagnose = () => {
         source={PlantAnimation}
         autoPlay
       />
-      <Text>On development</Text>
+      <Text>Under development</Text>
     </View>
   );
 };

@@ -1,17 +1,19 @@
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
-import Animated, {FadeIn} from 'react-native-reanimated';
-import {MOCKPLANTLIST} from '../../mock/mock';
+import Animated, {FadeIn, FadeInDown} from 'react-native-reanimated';
+import { ICategory } from '../../../types';
 import { styles } from './PlantList.style';
 
-const PlantList = ({items}: {items: []}) => {
+type PlantListPropType = {items: ICategory[]}
+
+const PlantList = ({items}: PlantListPropType) => {
   return (
     <View
       style={styles.container}>
       {items.map((category, index) => {
         return (
           <Animated.View
-            entering={FadeIn.duration(200).delay(100 + index * 40)}
+            entering={FadeInDown.duration(400).delay(100 + index * 100)}
             key={index}
             style={styles.itemWrapper}>
             <Pressable

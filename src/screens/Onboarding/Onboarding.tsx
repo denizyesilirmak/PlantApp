@@ -1,4 +1,4 @@
-import {FlatListProps, useWindowDimensions, View} from 'react-native';
+import {FlatListProps, Platform, useWindowDimensions, View} from 'react-native';
 import OnboardingSliderItem from '../../components/OnboardingSliderItem/OnboardingSliderItem';
 import LargeButton from '../../components/LargeButton/LargeButton';
 import SliderIndicator from '../../components/SliderIndicator/SliderIndicator';
@@ -52,8 +52,9 @@ const Onboarding = () => {
   const [activeSliderIndex, setActiveSliderIndex] = useState<number>(0);
 
   const handleContinueButtonPress = useCallback(() => {
+    setActiveSliderIndex(prevActiveIndex => prevActiveIndex + 1);
+
     if (activeSliderIndex >= SLIDER_ITEMS.length - 1) {
-      console.log('next page');
       navigation.navigate('Paywall');
       return;
     }
@@ -73,14 +74,9 @@ const Onboarding = () => {
       }}>
       <View style={styles.listContainer}>
         <FlatList
-          scrollEnabled={true}
+          scrollEnabled={false}
           ref={flatListRef}
           style={styles.flatlist}
-          onMomentumScrollEnd={event =>
-            setActiveSliderIndex(
-              parseInt(Math.round(event.nativeEvent.contentOffset.x / width)),
-            )
-          }
           showsHorizontalScrollIndicator={false}
           pagingEnabled
           horizontal
@@ -91,7 +87,10 @@ const Onboarding = () => {
 
       <View style={styles.bottomContainer}>
         <LargeButton label="Continue" onPress={handleContinueButtonPress} />
-        <SliderIndicator list={SLIDER_ITEMS} />
+        <SliderIndicator
+          dotCount={SLIDER_ITEMS.length}
+          activeIndex={activeSliderIndex}
+        />
       </View>
     </View>
   );

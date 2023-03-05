@@ -15,12 +15,14 @@ export const styles = StyleSheet.create({
     fontFamily: 'Rubik-Regular',
     marginLeft: 20,
     marginTop: 20,
+    color: '#000000'
   },
   largeText: {
     fontFamily: 'Rubik-SemiBold',
     marginLeft: 20,
     marginTop: 5,
     fontSize: 24,
+    color: '#000000'
   },
   headerBackground: {
     width: '100%',

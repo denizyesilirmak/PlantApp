@@ -35,6 +35,7 @@ const OnboardingSliderItem = ({item}: any) => {
         style={{
           paddingVertical: 10,
           fontFamily: 'Rubik-Light',
+          color: '#000000'
         }}>
         {item.description}
       </Text>
